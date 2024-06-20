@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Application</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #input-section {
+            padding: 10px;
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #map {
+            height: 90vh;
+            width: 100%;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+    <div id="input-section">
+        <label for="location-input">Enter Location:</label>
+        <input type="text" id="location-input" />
+        <button id="submit-btn">Submit</button>
+        <button id="hospital-btn">Nearest Hospital</button>
+        <button id="police-btn">Nearest Police Station</button>
+    </div>
+    <div id="map"></div>
+    <script>
+        /* script.js */
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = L.map('map').setView([20.5937, 78.9629], 5); // Initial view set to India
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            let userMarker, chosenMarker, hospitalMarker, policeMarker;
+            let line;
+
+            // Function to handle the user's current location
+            function handleUserLocation(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                userMarker = L.marker([lat, lon], {
+                    icon: L.icon({
+                        iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                    })
+                }).addTo(map).bindPopup('Your Location').openPopup();
+                map.setView([lat, lon], 10);
+            }
+
+            // Function to handle errors in getting the user's location
+            function handleError(error) {
+                console.error('Error getting location:', error);
+            }
+
+            // Get the user's current location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(handleUserLocation, handleError);
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+
+            // Handle the submit button click
+            document.getElementById('submit-btn').addEventListener('click', () => {
+                const locationInput = document.getElementById('location-input').value;
+                fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${locationInput}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.length > 0) {
+                            const lat = data[0].lat;
+                            const lon = data[0].lon;
+                            const displayName = data[0].display_name;
+
+                            if (chosenMarker) {
+                                map.removeLayer(chosenMarker);
+                            }
+
+                            chosenMarker = L.marker([lat, lon], {
+                                icon: L.icon({
+                                    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                                })
+                            }).addTo(map).bindPopup(`Chosen Location: ${displayName}`).openPopup();
+                            map.setView([lat, lon], 10);
+
+                            // Calculate and display the distance
+                            if (userMarker) {
+                                const userLatLng = userMarker.getLatLng();
+                                const chosenLatLng = L.latLng(lat, lon);
+                                const distance = userLatLng.distanceTo(chosenLatLng) / 1000; // distance in km
+
+                                if (line) {
+                                    map.removeLayer(line);
+                                }
+
+                                line = L.polyline([userLatLng, chosenLatLng], { color: 'green' }).addTo(map);
+                                alert(`Distance: ${distance.toFixed(2)} km`);
+                            }
+                        } else {
+                            alert('Location not found.');
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+
+            function getNearestAmenity(lat, lon, amenity) {
+                fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node(around:5000,${lat},${lon})[amenity=${amenity}];out;`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.elements.length > 0) {
+                            const nearest = data.elements[0];
+                            const amenityLat = nearest.lat;
+                            const amenityLon = nearest.lon;
+                            const displayName = nearest.tags.name || 'Unnamed';
+
+                            if (amenity === 'hospital') {
+                                if (hospitalMarker) {
+                                    map.removeLayer(hospitalMarker);
+                                }
+                                hospitalMarker = L.marker([amenityLat, amenityLon], {
+                                    icon: L.icon({
+                                        iconUrl: 'https://maps.google.com/mapfiles/ms/icons/hospitals.png'
+                                    })
+                                }).addTo(map).bindPopup(`Nearest Hospital: ${displayName}`).openPopup();
+                            } else if (amenity === 'police') {
+                                if (policeMarker) {
+                                    map.removeLayer(policeMarker);
+                                }
+                                policeMarker = L.marker([amenityLat, amenityLon], {
+                                    icon: L.icon({
+                                        iconUrl: 'https://maps.google.com/mapfiles/ms/icons/police.png'
+                                    })
+                                }).addTo(map).bindPopup(`Nearest Police Station: ${displayName}`).openPopup();
+                            }
+
+                            if (line) {
+                                map.removeLayer(line);
+                            }
+
+                            const userLatLng = userMarker.getLatLng();
+                            const amenityLatLng = L.latLng(amenityLat, amenityLon);
+                            line = L.polyline([userLatLng, amenityLatLng], { color: 'blue' }).addTo(map);
+
+                            const distance = userLatLng.distanceTo(amenityLatLng) / 1000; // distance in km
+                            alert(`Distance to nearest ${amenity}: ${distance.toFixed(2)} km`);
+                        } else {
+                            alert(`No nearby ${amenity} found.`);
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+
+            document.getElementById('hospital-btn').addEventListener('click', () => {
+                if (userMarker) {
+                    const userLatLng = userMarker.getLatLng();
+                    getNearestAmenity(userLatLng.lat, userLatLng.lng, 'hospital');
+                } else {
+                    alert('User location not available.');
+                }
+            });
+
+            document.getElementById('police-btn').addEventListener('click', () => {
+                if (userMarker) {
+                    const userLatLng = userMarker.getLatLng();
+                    getNearestAmenity(userLatLng.lat, userLatLng.lng, 'police');
+                } else {
+                    alert('User location not available.');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

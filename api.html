@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Nearby Places</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body>
+    <button onclick="getLocation()">Get Location</button>
+    <p id="location"></p>
+    <ul id="places-list"></ul>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            document.getElementById("location").innerHTML = "Latitude: " + lat + "<br>Longitude: " + lon;
+            findNearbyPlaces(lat, lon);
+        }
+
+        function findNearbyPlaces(lat, lon) {
+            const location = new google.maps.LatLng(lat, lon);
+            const map = new google.maps.Map(document.createElement('div'));
+            const service = new google.maps.places.PlacesService(map);
+            const request = {
+                location: location,
+                radius: '5000', // 5 km radius
+                type: ['hospital', 'police']
+            };
+
+            service.nearbySearch(request, function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    const placesList = document.getElementById('places-list');
+                    placesList.innerHTML = '';
+                    for (let i = 0; i < results.length; i++) {
+                        const place = results[i];
+                        const listItem = document.createElement('li');
+                        listItem.textContent = place.name;
+                        placesList.appendChild(listItem);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

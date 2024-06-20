@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janina Stay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: url('path_to_your_hero_image.jpg') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .features-icon {
+            font-size: 2rem;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Janina Stay</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="#">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section d-flex align-items-center justify-content-center">
+        <div class="container text-center">
+            <h1 class="display-4">The Coolest Hotel and Resort</h1>
+            <p class="lead">Enjoy your vacation with the best hotel services</p>
+            <a href="#" class="btn btn-primary me-2">Contact Us</a>
+            <a href="#" class="btn btn-outline-light">Rate Us</a>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Top Features</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <i class="fas fa-wind features-icon"></i>
+                        <h5>Air Conditioner</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <i class="fas fa-wifi features-icon"></i>
+                        <h5>Free Wi-Fi</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <i class="fas fa-lock features-icon"></i>
+                        <h5>High Security</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <i class="fas fa-tv features-icon"></i>
+                        <h5>Digital TV</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Best Rooms</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="path_to_room_image.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Super Deluxe</h5>
+                            <p class="card-text">Description of Super Deluxe room.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="path_to_room_image.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Royal Deluxe</h5>
+                            <p class="card-text">Description of Royal Deluxe room.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="path_to_room_image.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Murphy Room</h5>
+                            <p class="card-text">Description of Murphy room.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Best Pricing</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Deluxe Package</h5>
+                        <p>₹5000</p>
+                        <ul class="list-unstyled">
+                            <li>Feature 1</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Special Package</h5>
+                        <p>₹8000</p>
+                        <ul class="list-unstyled">
+                            <li>Feature 1</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Luxury Package</h5>
+                        <p>₹12000</p>
+                        <ul class="list-unstyled">
+                            <li>Feature 1</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Awesome Partners</h2>
+            <div class="row">
+                <div class="col-md-2"><img src="path_to_partner_logo.jpg" class="img-fluid" alt="Partner 1"></div>
+                <div class="col-md-2"><img src="path_to_partner_logo.jpg" class="img-fluid" alt="Partner 2"></div>
+                <div class="col-md-2"><img src="path_to_partner_logo.jpg" class="img-fluid" alt="Partner 3"></div>
+                <div class="col-md-2"><img src="path_to_partner_logo.jpg" class="img-fluid" alt="Partner 4"></div>
+                <div class="col-md-2"><img src="path_to_partner_logo.jpg" class="img-fluid" alt="Partner 5"></div>
+                <div class="col-md-2"><img src="path_to_partner_logo.jpg" class="img-fluid" alt="Partner 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Meet Our Team</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="path_to_team_member_photo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Team Member 1</h5>
+                            <p class="card-text">Position</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="path_to_team_member_photo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Team Member 2</h5>
+                            <p class="card-text">Position</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="path_to_team_member_photo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Team Member 3</h5>
+                            <p class="card-text">Position</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="path_to_team_member_photo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Team Member 4</h5>
+                            <p class="card-text">Position</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Janina Stay</h5>
+                    <p>Description of the hotel.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Rooms</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Address</p>
+                    <p><i class="fas fa-phone"></i> +1234567890</p>
+                    <p><i class="fas fa-envelope"></i> email@example.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
