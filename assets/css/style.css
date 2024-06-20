@@ -182,7 +182,7 @@ a {
     background-color: #c8deff;
 }
 
-.custom-graphic  {
+.custom-graphic {
 
     display: flex;
     align-items: center;
@@ -253,6 +253,7 @@ a {
     background: url('../images/place-img.png');
     background-size: cover;
     background-position: center;
+    text-transform: uppercase;
 }
 
 /* .place section end here  */
@@ -263,6 +264,7 @@ a {
     background: url('../images/visit.png');
     background-position: center;
     background-size: cover;
+    text-transform: uppercase;
 }
 
 /* visit section end here  */
