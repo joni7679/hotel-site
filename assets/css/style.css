@@ -103,29 +103,34 @@ a {
     text-align: center;
 }
 
+.search-bar-input-section {
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.submit-btn {
+    border-bottom-left-radius: 66px !important;
+    border-top-right-radius: 9px !important;
+    border-bottom-right-radius: 9px !important;
+}
 
 #search-bar {
     padding: 8px;
-    border-radius: 8px;
     border: none;
     outline: none;
     width: 90%;
     color: var(--white);
+    background-color: rgba(0, 0, 0, 0.2);
+    
 }
 
 .input-group {
-    /* border-radius: 30px; */
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#search-bar {
-    border: none;
-    border-radius: 0;
-    padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* border-radius: 0% 100% 100% 0% / 30% 0% 100% 70%; */
-}
+
 
 ::placeholder {
     color: var(--white);
@@ -138,7 +143,7 @@ a {
     padding: 15px 30px;
     color: #333;
     font-weight: bold;
-    /* border-radius: 0% 100% 0% 100% / 30% 0% 100% 70% ; */
+
 }
 
 
@@ -148,7 +153,6 @@ a {
     width: 90%;
     height: 50%;
     background: linear-gradient(to bottom, #1e90ff, #87cefa);
-    /* Gradient from blue to light blue */
     border-bottom-left-radius: 150px;
     border-bottom-right-radius: 150px;
     display: flex;
@@ -178,12 +182,10 @@ a {
 /* about section start here */
 .about-section {
     width: 100%;
-    /* height: 100vh; */
     background-color: #c8deff;
 }
 
-.custom-graphic  {
-
+.custom-graphic {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,6 +197,7 @@ a {
     text-transform: capitalize;
     background-color: #10b9d6;
     color: var(--white);
+    margin-bottom: 26px;
 }
 
 /* about section end here */
@@ -239,7 +242,6 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .content-wrapper {
@@ -249,7 +251,6 @@ a {
 
 .place-section {
     width: 100%;
-    /* height: 70vh; */
     background: url('../images/place-img.png');
     background-size: cover;
     background-position: center;
@@ -267,13 +268,6 @@ a {
 
 /* visit section end here  */
 
-
-/* transport section start here  */
-/* .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-} */
 
 .card-img {
     width: 100%;
@@ -298,19 +292,15 @@ a {
 
 
 /* transport section end here  */
-
-
 .restaurant-section {
-    background-image: url(../images/banner3.png);
+    /* background-image: url(../images/banner3.png); */
     background-size: cover;
     padding: 50px 0;
-
     background-position: center;
     background-size: contain;
 }
 
 #graphic {
-
     position: absolute;
     left: 87px;
     top: 94px;
@@ -363,4 +353,96 @@ a {
     justify-content: center;
     cursor: pointer;
 
+}
+
+/* place */
+
+/* hotel card */
+.hotel-list {
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hotel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.hotel-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.hotel-title {
+    padding: 9px;
+}
+
+.hotel-info {
+    padding: 15px;
+}
+
+.hotel-name {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.hotel-location,
+.hotel-price,
+.hotel-description {
+    margin: 10px 0;
+}
+
+.hotel-card img {
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.hotel-card:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.hotel-details {
+    width: 500px;
+    margin: 50px auto;
+    display: none;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 9px;
+    padding: 17px;
+}
+
+.hotel-details img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.hotel-details h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.hotel-details p {
+    margin-top: 10px;
+}
+
+.hotel-details.active {
+    display: block;
+}
+
+#pay {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }

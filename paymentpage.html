@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Hide payment page by default */
+        .hidden {
+            display: none;
+        }
+
+        /* Styling for payment details container */
+        #payment-page {
+            padding: 20px;
+            background-color: #f8f9fa;
+            /* Light gray background */
+            border: 1px solid #ced4da;
+            /* Gray border */
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Centering form elements within container */
+        #payment-page .container {
+            max-width: 600px;
+            /* Limit width for better readability */
+            margin: 0 auto;
+            /* Center align horizontally */
+        }
+
+        /* Style form labels */
+        #payment-page label {
+            font-weight: bold;
+        }
+
+        /* Style form inputs */
+        #payment-page input[type="text"],
+        #payment-page input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            /* Light gray border */
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        /* Style form inputs on focus */
+        #payment-page input[type="text"]:focus,
+        #payment-page input[type="number"]:focus {
+            outline: none;
+            border-color: #6c757d;
+            /* Dark gray border on focus */
+            box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25);
+            /* Light shadow on focus */
+        }
+
+        /* Style buttons */
+        #payment-page button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Primary button style */
+        #payment-page .btn-primary {
+            background-color: #007bff;
+            /* Blue */
+            border-color: #007bff;
+            color: #fff;
+            /* White text */
+        }
+
+        /* Secondary button style */
+        #payment-page .btn-secondary {
+            background-color: #6c757d;
+            /* Gray */
+            border-color: #6c757d;
+            color: #fff;
+            /* White text */
+        }
+
+        /* Align secondary button next to primary button */
+        #payment-page .ms-2 {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="payment-page" class="">
+        <div class="container">
+            <h2 class="my-4">Payment Details</h2>
+            <form id="payment-form">
+                <div class="mb-3">
+                    <label for="card-number" class="form-label">Card Number</label>
+                    <input type="text" class="form-control" id="card-number" placeholder="Enter card number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiry-date" class="form-label">Expiry Date</label>
+                    <input type="text" class="form-control" id="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                </div>
+                <div class="mb-3">
+                    <label for="card-holder" class="form-label">Card Holder Name</label>
+                    <input type="text" class="form-control" id="card-holder" placeholder="Enter card holder name"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount (₹)</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Enter amount" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Pay Now</button>
+                <button type="button" class="btn btn-secondary ms-2" id="back-to-hotels">Back to Hotels</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

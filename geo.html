@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation UI</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .location-container {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .location-container input {
+            border: none;
+            background: transparent;
+            color: #fff;
+            padding: 10px;
+            flex: 1;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .location-container button {
+            background: #fdbb2d;
+            /* Gradient colors */
+            background: linear-gradient(to right, #fdbb2d, #22c1c3);
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        .location-container button:hover {
+            background: linear-gradient(to right, #22c1c3, #fdbb2d);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="location-container">
+        <input type="text" id="locationInput" placeholder="Enter your current location">
+        <button id="locationButton">SUBMIT</button>
+    </div>
+
+    <script>
+        document.getElementById('locationButton').addEventListener('click', function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        console.log(`Latitude: ${lat}, Longitude: ${lon}`);
+                        // Call your function to display nearest hotels
+                        displayNearestHotels(lat, lon);
+                    },
+                    error => {
+                        console.error("Error getting geolocation: ", error);
+                    }
+                );
+            } else {
+                console.error("Geolocation is not supported by this browser.");
+            }
+        });
+
+        function displayNearestHotels(lat, lon) {
+            // Your function to display nearest hotels based on latitude and longitude
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Results</title>
+</head>
+
+<body>
+    <h1>Filtered Results</h1>
+
+    <div id="filteredResults">
+        <!-- Filtered results will be displayed here -->
+        <div class="filterdata">
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const filterName = params.get('name');
+
+            if (filterName) {
+                // Simulated array of objects (replace with your actual array)
+                const data = [
+                    { name: "Alice", age: 25 },
+                    { name: "Bob", age: 30 },
+                    { name: "Charlie", age: 28 },
+                    { name: "David", age: 32 }
+                ];
+
+                // Filter data based on the provided name filter
+                const filteredData = data.filter(item =>
+                    item.name.toLowerCase().includes(filterName)
+
+                );
+
+                console.log(name)
+
+                const filteredResultsDiv = document.getElementById("filteredResults");
+
+                // Display filtered results
+                let cluter = '';
+                filteredData.forEach(result => {
+                    // const resultDiv = document.createElement("div");
+                    // resultDiv.innerHTML = `<h3>${result.name}</h3><p>Age: ${result.age}</p>`;
+                    // filteredResultsDiv.appendChild(resultDiv);
+                    cluter = `   <div class="filterdata">
+                        <p>${result.name}</p>
+
+        </div>
+
+                    filteredResults.innerHTML = cluter;
+                                  `
+                });
+            } else {
+                const noFilterDiv = document.createElement("div");
+                noFilterDiv.textContent = "No filter criteria provided.";
+                document.body.appendChild(noFilterDiv);
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

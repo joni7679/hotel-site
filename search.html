@@ -1,0 +1,50 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search and Filter</title>
+</head>
+
+<body>
+    <h1>Search and Filter Results</h1>
+    <form id="searchForm">
+        <label for="filterName">Filter by Name:</label>
+        <input type="text" id="filterName">
+    </form>
+
+    <div id="filteredResults">
+        <!-- Filtered results will be displayed here -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterInput = document.getElementById('filterName');
+
+            filterInput.addEventListener('input', function () {
+                const filterName = filterInput.value.trim().toLowerCase();
+                updateFilteredResults(filterName);
+            });
+
+            function updateFilteredResults(filterName) {
+                // Prepare query string for result.html
+                const queryString = `result.html?name=${encodeURIComponent(filterName)}`;
+
+                // Fetch data from result.html or handle filtering/display locally
+                // For demonstration purposes, let's assume direct display
+                const filteredResultsDiv = document.getElementById("filteredResults");
+                filteredResultsDiv.innerHTML = `<p>Loading...</p>`;
+
+                // Simulated delay to mimic fetching data (replace with actual fetch if required)
+                setTimeout(() => {
+                    window.location.href = queryString;
+                }, 500);
+            }
+        });
+    </script>
+</body>
+
+</html>

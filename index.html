@@ -7,16 +7,17 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
 </head>
 
 <body>
+    
     <!-- navbar section  -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-
                 <span>
                     <img src="./assets/images/logo.png" alt="">
                 </span>
@@ -26,7 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto gap-3">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -48,7 +49,6 @@
     </nav>
 
     <!-- banner section -->
-
     <section class="banner-section ">
         <div class="overly"></div>
         <div class="container banner-part">
@@ -56,9 +56,9 @@
                 <h3>hello friends</h3>
                 <h1>wellcome to india</h1>
                 <div class="input-group mt-4">
-                    <div class="d-flex">
+                    <div class="d-flex search-bar-input-section">
                         <input type="text" id="search-bar" placeholder="Enter your current location">
-                        <button class="btn btn-custom">SUBMIT</button>
+                        <button class="btn btn-custom submit-btn">SUBMIT</button>
                     </div>
                 </div>
             </div>
@@ -66,17 +66,20 @@
 
         </div>
     </section>
+
     <!-- about section -->
     <section class="section">
-
         <div class="curved-background">
             <div class="container">
                 <div>
-                    <h4 class="text-center text-white text-uppercase custom-mb relative">why us</h4>
-                    <!-- <img id="line-grp" src="./assets/images/line.png" alt=""> -->
+                    <div class="custom-graphic">
+                        <h1 class="text-uppercase text-white text-center">why us</h1>
+                        <img src="./assets/images/line.png" alt="">
+                    </div>
+
                 </div>
 
-                <div class="row custom-px">
+                <div class="row custom-px text-center">
                     <div class="col-md-3 col-sm-6">
                         <div class="box">
                             <h4>40K+</h4>
@@ -142,7 +145,6 @@
 
     </section>
 
-
     <section class="place-section">
         <div class="container pt-5">
             <div class="custom-graphic">
@@ -155,38 +157,38 @@
 
                 <!-- <h1 class="text-center text-white mb-5">Which Type of Place Would You Like to Visit?</h1> -->
                 <div class="row justify-content-center">
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="HOTEL 
-(2 START)">
+                                   (2 START)">
 
                         </div>
                         <div class="place-name">HOTEL
                             (2 START)</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://images.unsplash.com/photo-1572953109213-3be62398eb95?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Museum">
                         </div>
                         <div class="place-name">Museum</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Museum">
                         </div>
                         <div class="place-name">Beach</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Museum">
                         </div>
                         <div class="place-name">Church</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="Museum">
@@ -198,6 +200,7 @@
             </div>
         </div>
     </section>
+
     <section class="visit-section">
         <div class="container py-5">
             <div class="custom-graphic">
@@ -207,7 +210,7 @@
             </div>
             <div class="content-wrapper container">
                 <div class="row justify-content-center">
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://cdn.pixabay.com/photo/2021/12/11/07/59/hotel-6862159_1280.jpg"
                                 alt="Mountain">
@@ -216,28 +219,28 @@
                         <div class="place-name">HOTEL
                             (2 START)</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_1280.jpg"
                                 alt="Museum">
                         </div>
                         <div class="place-name">hotel 5 star</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="hotel 5 star">
                         </div>
                         <div class="place-name">Beach</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://cdn.pixabay.com/photo/2014/07/21/19/20/lobby-398845_1280.jpg"
                                 alt="Museum">
                         </div>
                         <div class="place-name">Hotel 7 star</div>
                     </div>
-                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4">
+                    <div class=" col-md-4 col-lg-2  col-sm-12 text-center mb-4 places-boxs">
                         <div class="place-card">
                             <img src="https://cdn.pixabay.com/photo/2012/11/21/10/24/building-66789_1280.jpg"
                                 alt="Museum">
@@ -249,6 +252,7 @@
 
         </div>
     </section>
+
     <section class="transport-section">
         <div class="container my-5">
             <div class="row  g-4">
@@ -329,6 +333,7 @@
             </div>
         </div>
     </section>
+
     <section class="restaurant-section text-center">
         <div class="custom-graphic">
             <h1 class="text-uppercase text-white text-center">WHICH TYPE OF PLACE WOULD YOU
@@ -337,7 +342,7 @@
         </div>
         <div class="position-relative">
             <div class="container">
-                <div class="row ">
+                <div class="row  ">
                     <div class="col-md-3  col-sm-6">
                         <div class="restaurant-card">
                             <img src="https://www.tripsavvy.com/thmb/5cCD83pmbos1Vd0HPNooUdgHV2A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/pic3-l-57fb70bb3df78c690f791e96.jpg"
@@ -381,7 +386,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="info-section py-5">
         <!-- <img src="./assets/images/FIND-PS&HOSPITAL-IMG.svg" alt="Information Illustration" class="img-fluid mb-4"> -->
@@ -465,16 +469,8 @@
         </div>
     </footer>
 
-
-
-
-
-
-
     <!-- modal  -->
     <!-- Button trigger modal -->
-
-
     <!-- Modal -->
     <div class="modal fade" id="find-map" tabindex="-1" aria-labelledby="find-mapLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -499,11 +495,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
     <!-- boostrap-5 js cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -511,6 +502,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
 </body>
 
 </html>
